@@ -1,12 +1,20 @@
 import React from "react";
+import Links from "./Links"
+import user from "../data/user";
+import { render } from "@testing-library/react";
 
-function About() {
+
+function About(props) {
+  let paragraph;
+  if(props.bio){
+    paragraph =<p>{props.bio}</p>
+  }
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      {paragraph}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <Links />
     </div>
   );
 }
